@@ -1,0 +1,12 @@
+form {
+  padding: 1rem;
+  background: #e5e7eb;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: .5rem;
+}

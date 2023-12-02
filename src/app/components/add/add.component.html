@@ -1,0 +1,21 @@
+  <form class="grid" (ngSubmit)="add()">
+    <label for="prenom">Prénom</label>
+    <input name="prenom" type="text" [(ngModel)]="personne.prenom"/>
+
+    <label for="nom">Nom</label>
+    <input name="nom" type="text" [(ngModel)]="personne.nom" />
+
+    <label for="age">Age</label>
+    <input name="age" type="number" [(ngModel)]="personne.age" />
+
+    <label for="sexe">Sexe</label>
+    <div>
+      <input name="sexe" type="radio" value="Femme" [(ngModel)]="personne.sexe"> Femme <br/>
+      <input name="sexe" type="radio" value="Homme" [(ngModel)]="personne.sexe"> Homme
+    </div>
+
+    <label for="profession">Profession</label>
+    <input type="text" name="profession" [(ngModel)]="personne.profession"/>
+   
+    <button type="submit">Créer</button>
+  </form>
