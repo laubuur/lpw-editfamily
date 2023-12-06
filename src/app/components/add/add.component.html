@@ -1,21 +1,22 @@
-  <form class="grid" (ngSubmit)="add()">
+  <form class="grid">
     <label for="prenom">Prénom</label>
-    <input name="prenom" type="text" [(ngModel)]="personne.prenom"/>
+    <input name="prenom" type="text" [(ngModel)]="selectedPersonne.prenom"/>
 
     <label for="nom">Nom</label>
-    <input name="nom" type="text" [(ngModel)]="personne.nom" />
+    <input name="nom" type="text" [(ngModel)]="selectedPersonne.nom" />
 
     <label for="age">Age</label>
-    <input name="age" type="number" [(ngModel)]="personne.age" />
+    <input name="age" type="number" [(ngModel)]="selectedPersonne.age" />
 
     <label for="sexe">Sexe</label>
     <div>
-      <input name="sexe" type="radio" value="Femme" [(ngModel)]="personne.sexe"> Femme <br/>
-      <input name="sexe" type="radio" value="Homme" [(ngModel)]="personne.sexe"> Homme
+      <input name="sexe" type="radio" value="Femme" [(ngModel)]="selectedPersonne.sexe"> Femme <br/>
+      <input name="sexe" type="radio" value="Homme" [(ngModel)]="selectedPersonne.sexe"> Homme
     </div>
 
     <label for="profession">Profession</label>
-    <input type="text" name="profession" [(ngModel)]="personne.profession"/>
+    <input type="text" name="profession" [(ngModel)]="selectedPersonne.profession"/>
    
-    <button type="submit">Créer</button>
+    <button type="button" (click)='add()'>Créer</button>
+    <button type="button" (click)='edit()'>Editer</button>
   </form>

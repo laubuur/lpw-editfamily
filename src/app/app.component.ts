@@ -13,6 +13,8 @@ import { AddComponent } from './components/add/add.component';
 })
 export class AppComponent {
   showAddForm = false;
+  selectedPersonne?: Personne; 
+
   liste: Personne[] = [
     {
       id: 1,
@@ -51,11 +53,15 @@ export class AppComponent {
     }
   }
 
-  edit(item: Personne) {
+  editItem(item: Personne) {
     const index = this.liste.findIndex(l => l.id === item.id);
     if (index !== -1) {
       this.liste[index] = item;
     }
+  }
+
+  selectPersonne(item: Personne) {
+    this.selectedPersonne = item;
   }
 
   removeItem(index: number) {

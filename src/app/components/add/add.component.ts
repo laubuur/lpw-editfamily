@@ -12,16 +12,24 @@ import { FormsModule } from '@angular/forms';
 export class AddComponent {
 
   @Output() createEmitter = new EventEmitter();
-
-  personne: Personne = {
+  @Output() editEmitter = new EventEmitter();
+  @Input() selectedPersonne: Personne = {
     nom: '',
     prenom: '',
     age: 0,
     sexe: '',
     profession: ''
-  };
+  }
+
+  ngOnInit() {
+    this.selectedPersonne = JSON.parse(JSON.stringify(this.selectedPersonne));
+  }
 
   add() {
-    this.createEmitter.emit(this.personne);
+    this.createEmitter.emit(this.selectedPersonne);
+  }
+
+  edit() {
+    this.editEmitter.emit(this.selectedPersonne);
   }
 }
