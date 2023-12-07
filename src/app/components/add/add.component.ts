@@ -22,7 +22,7 @@ export class AddComponent {
   }
 
   ngOnInit() {
-    this.selectedPersonne = JSON.parse(JSON.stringify(this.selectedPersonne));
+    this.selectedPersonne = this.clone(this.selectedPersonne);
   }
 
   add() {
@@ -30,6 +30,11 @@ export class AddComponent {
   }
 
   edit() {
-    this.editEmitter.emit(this.selectedPersonne);
+    const toSend = this.clone(this.selectedPersonne);
+    this.editEmitter.emit(toSend);
+  }
+
+  private clone(value: any) {
+    return JSON.parse(JSON.stringify(value));
   }
 }
